@@ -26,7 +26,7 @@ local Netro = require(game.ReplicatedStorage.Netro)
 
 -- Create the shared module
 local CoinsSystem = Netro.CreateSharedModule {
-	ModuleName = "CoinsSystem"
+    ModuleName = "CoinsSystem"
 }
 
 -- Create the table where we will be holding our players coins
@@ -35,7 +35,7 @@ local PlayersCoins = {}
 -- Here we create a shared method which will automatically receive "Player"
 function CoinsSystem.Shared.GetCoins(Player)
     local Coins = PlayersCoins[Player] -- Get coins
-	return Coins or 0 -- Return coins or 0 if no coins were found
+    return Coins or 0 -- Return coins or 0 if no coins were found
 end
 
 -- Here we create a server method that will add coins to a player
@@ -43,7 +43,7 @@ function CoinsSystem.Server.AddCoins(Player, Ammount)
     local Coins = CoinsSystem.Shared.GetCoins(Player) -- Get coins
     Coins += Ammount -- Add the coins
 
-	PlayersCoins[Player] = Coins -- Set the player's coins
+    PlayersCoins[Player] = Coins -- Set the player's coins
 end
 
 -- Export the shared module
@@ -99,19 +99,19 @@ To start, we are gonna place a module script inside **ServerStorage** called **C
 ```lua
 -- Make a table with our server tables "Shared" and "Server"
 local CoinsSystemServer = {
-	Shared = {},
-	Server = {}
+    Shared = {},
+    Server = {}
 }
 
 -- This is just a copy from the original coins system snippet
 local PlayersCoins = {}
 
 function CoinsSystemServer.Shared.GetPoints(Player)
-	return PlayersCoins[Player] or 0
+    return PlayersCoins[Player] or 0
 end
 
 function CoinsSystemServer.Server.AddPoints(Player, Points)
-	PlayersCoins[Player] = CoinsSystem.Shared.GetPoints(Player) + Points
+    PlayersCoins[Player] = CoinsSystem.Shared.GetPoints(Player) + Points
 end
 
 return MySystemServer
@@ -130,13 +130,13 @@ local CoinsSystemServer = nil
 
 -- We check if it's the server that is in this module, we do this so the client doesn't try and index something in ServerStorage because it can't
 if Netro.IsServer() then
-	CoinsSystemServer = ServerStorage.CoinsSystemServer -- Set the variable to the module
+    CoinsSystemServer = ServerStorage.CoinsSystemServer -- Set the variable to the module
 end
 
 -- Create the shared module
 local CoinsSystem = Netro.CreateSharedModule {
-	ModuleName = "CoinsSystem"
-	ExternalServerModule = CoinsSystemServer -- Set the external server module to our server module
+    ModuleName = "CoinsSystem"
+    ExternalServerModule = CoinsSystemServer -- Set the external server module to our server module
 }
 
 -- Export the shared module
