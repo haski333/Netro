@@ -90,7 +90,7 @@ Well, that gives people the possiblity of stealing **server** code as everything
 
 This shouldn't really be a problem as not all of your **server** modules will be in ReplicatedStorage
 
-But if you really wanna keep your **server** code private and protected from being copied, you have a way to that
+But if you really wanna keep your **server** code private and protected from being copied, you have a way to do that
 
 In the module settings you pass when making your **shared module**/**system** you have a setting called **ExternalServerModule** and ill show you how to use it
 
