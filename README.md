@@ -83,7 +83,7 @@ if in your script, you yield some time and then require the module so that the *
 ## Safety
 
 Let's also start talking a bit about the safety of **shared modules**  
-As you saw in our coins system code snippet, we have our coins system inside **ReplicatedStorage**
+As you saw in our coins system code snippet, we have our coins system module inside **ReplicatedStorage**
 
 "So, what's the problem?"  
 Well, that gives people the possiblity of stealing **server** code as everything inside **ReplicatedStorage** is, replicated😁! Including scripts...😔 and we don't really want that.
