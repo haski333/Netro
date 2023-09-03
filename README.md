@@ -144,7 +144,7 @@ return CoinsSystem:Export()
 ```
 
 Now because the module is contained in **ServerStorage** the client has no access to it and now our server code is safe.
-We can still call all shared methods we called in the last **LocalScript** snippet
+We can still call all shared methods of the system on the client
 
 
 
