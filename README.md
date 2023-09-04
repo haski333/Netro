@@ -66,7 +66,7 @@ Players.PlayerAdded(PlayerAdded) -- Connect the function the the event
 * LocalScript (StarterPlayerScripts)
 ```lua
 local CoinsSystem = require(game.ReplicatedStorage.CoinsSystem)
-local Coins = CoinsSystem.GetPoints() -- Get points (When we call GetPoints our client will automatically be received to the server)
+local Coins = CoinsSystem.GetPoints() -- Get points (When we call GetPoints our client's player will automatically be received on the server)
 
 print(CoinsSystem.GetPoints()) -- 10
 ```
